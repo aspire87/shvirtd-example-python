@@ -1,0 +1,10 @@
+*.pdf
+*.txt
+*.yaml
+*.py
+.env
+.gitignore
+/haproxy/
+/nginx/
+README.md
+LICENSE
