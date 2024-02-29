@@ -1,8 +1,5 @@
 *.pdf
-*.txt
 *.yaml
-*.py
-.env
 .gitignore
 /haproxy/
 /nginx/
