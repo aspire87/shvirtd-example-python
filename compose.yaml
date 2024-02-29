@@ -1,14 +1,5 @@
 version: "3.8"
 
-x-deploy: &deploy-dev
-  deploy:
-    resources:
-      limits:
-        memory: 256M
-x-env_file: &env_file
-  env_file:
-    - .env
-
 include:
   - proxy.yaml
 
@@ -21,7 +12,8 @@ services:
         ipv4_address: 172.20.0.5
     ports:
       - 5000:5000
-    <<: [*deploy-dev, *env_file]
+    env_file:
+      - .env
     environment:
       - DB_TABLE_NAME=requests
       - DB_HOST=db
@@ -38,4 +30,5 @@ services:
         ipv4_address: 172.20.0.10
     ports:
       - 3306:3306
-    <<: [*deploy-dev, *env_file]
+    env_file:
+      - .env
